@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    "Fdist.gemspec",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
