@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "Fdist"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["michael d. towle"]
-  s.date = "2013-11-08"
+  s.date = "2013-11-27"
   s.description = "Array methods now include :freq and :fdist, the first of which returns a Rational, and the second of which returns a hash of expression => count pairs"
   s.email = "gametheoretic@gmail.com"
   s.extra_rdoc_files = [
