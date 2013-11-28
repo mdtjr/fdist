@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "Fdist"
-  gem.homepage = "http://github.com/gametheoretic/Fdist"
+  gem.name = "fdist"
+  gem.homepage = "http://github.com/gametheoretic/fdist"
   gem.license = "MIT"
   gem.summary = %Q{quickie add-ons to the Array class}
   gem.description = %Q{Array methods now include :freq and :fdist, the first of which returns a Rational, and the second of which returns a hash of expression => count pairs}
