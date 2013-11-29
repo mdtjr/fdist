@@ -12,14 +12,26 @@ module Headers
 
 	def headers= param_list
 		if first.class != Hash
-			map! do |val_set|
-				
+			if first.class != String
+				map! do |val_set|
+					
 
-				hash = {}
-				arrayify(val_set).each_with_index do |elem, idx|
-					hash[param_list[idx += 1]] = elem
+					hash = {}
+					val_set.each_with_index do |elem, idx|
+						hash[param_list[idx += 1]] = elem
+					end
+					hash
 				end
-				hash
+			else
+				map! do |val_set|
+					
+
+					hash = {}
+					arrayify(val_set).each_with_index do |elem, idx|
+						hash[param_list[idx += 1]] = elem
+					end
+					hash
+				end
 			end
 		end
 		map! do |val_hash|
@@ -43,8 +55,6 @@ private
 			thing.values
 		rescue
 			thing.strip.split ","
-		rescue
-			thing
 		end
 	end
 end
