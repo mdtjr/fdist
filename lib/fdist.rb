@@ -67,8 +67,13 @@ module Frequency
 	end
 
 	def fdist
-		self.uniq.sort_by{|el| self.count(el)}.reverse.inject({}){|memo, el| memo[el] = self.count(el)}
+		memo = {}
+		uniq.sort_by{|x| count(x)}.each do |x|
+			memo[x] = count(x)
+		end
+		memo
 	end
+
 
 end
 
