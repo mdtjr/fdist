@@ -9,11 +9,13 @@ module Enumerable
 		end
 	end
 
-	def fdist &block
-		temp = self.map &block
-		temp.inject({}) do |result,element|
-			result[element] = temp.count element
+	def fdist
+		if block_given?
+			result = group_by{|elem| yield elem}
+			result.each_key{|key| result[key] = result[key].count}
 			result
+		else
+			uniq.inject({}){|result,elem| result[elem] = count elem;result}
 		end
-	end	
+	end
 end
