@@ -7,8 +7,8 @@ module Enumerable
 	def fdist(valid_array_slice_arg=0..-1)
 		self.group_by do |elem|
 			block_given? ? yield(elem) : elem
-		end.map do |result, instances_of_that_result|
-			[result, instances_of_that_result.count]
+		end.to_a.map do |result, results_array|
+			[result, results_array.count]
 		end.sort_by do |result, frequency|
 			frequency
 		end[valid_array_slice_arg].to_h
